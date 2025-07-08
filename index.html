@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <title>Riipus</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Riipus Home Page">
+    <meta name="author" content="Niko Hakala">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Riipus,Riipus Interactive,Paranoia,Paranoia Game">
+    <link rel="stylesheet" href="CSS/styles.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/ico/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/ico/favicon-16x16.png">
+    <link rel="manifest" href="/img/ico/site.webmanifest">
+
+  </head>
+
+  <body>
+
+    <div class="main">
+
+      <div class="container1">
+
+        <img class="logo" src="img/logo_white_transparent.png" alt="RiipusLogo"></img>
+
+        <div class="text-wrapper">
+          <span class="logo-text">Riipus Interactive</span>
+        </div>
+
+        <span class="DOWN1">V</span>
+        <span class="DOWN2">V</span>
+        <span class="DOWN3">V</span>
+
+      </div>
+
+      <div class="container2">
+
+        <div class="games-wrapper">
+          
+          <span class="title-text">Games</span>
+
+          <div class="image">
+            <iframe class="video" src="https://www.youtube.com/embed/sgPHZRPQWx0?si=eyKwKBq9AHNXlIwS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+
+          <div class="title">
+            <h3><span class="white">PARANOIA</span></h3>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="container3">
+
+         <div class="team-wrapper">
+
+          <span class="title-text">Team</span>
+          <div class="image">
+            <img class="profilepic" id="norightclick" src="../img/xmprfl.jpg" alt="Dev Image">
+          </div>
+
+          <h2>Niko Hakala</h2>
+
+          <span class="role">DEVELOPER</span>
+
+        </div>
+
+        <div class="container4">
+
+          <span class="title-text">Social</span>
+          <div class="contact-info">
+            
+            <a href="https://www.instagram.com/riipusgames/">
+              <img class="lilogo" src="../img/icons8-instagram.png" alt="Instagram">
+            </a>
+
+            <a href="https://www.linkedin.com/company/riipus/">
+              <img class="lilogo" src="../img/icons8-linkedin-logo.png" alt="Linkedin">
+            </a>
+
+            <a href="mailto:riipusgames@gmail.com">
+              <img class="lilogo" src="../img/icons8-email.png" alt="Email">
+            </a>
+
+            <a href="https://www.youtube.com/@riipus">
+              <img class="lilogo" src="../img/icons8-youtube.png" alt="YouTube">
+            </a>
+
+            <a href="https://x.com/riipusgames">
+              <img class="lilogo" src="../img/icons8-xlogo.png" alt="X">
+            </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <footer class="site-footer">
+      <p>/ 2025 / Riipus Interactive /</p>
+    </footer>
+
+  </body>
+
+  <script>
+
+    if (location.pathname.endsWith('index.html')) {
+      var newPath = location.pathname.replace('index.html', '');
+      window.history.replaceState({}, document.title, newPath);
+    }
+
+    document.getElementById('norightclick').oncontextmenu = function(e) {
+      e.preventDefault();
+    };
+
+    window.onload = () => {
+      if (window.scrollY === 0) {
+
+        let userScrolled = false;
+
+          const onUserScroll = () => {
+            userScrolled = true;
+            window.removeEventListener('scroll', onUserScroll);
+          };
+
+        window.addEventListener('scroll', onUserScroll);
+
+        
+        setTimeout(() => {
+          window.removeEventListener('scroll', onUserScroll);
+          if (!userScrolled) {
+            const target = document.querySelector('.title-text');
+            if (target) {
+              target.scrollIntoView({ behavior: 'smooth' });
+            }
+          }
+        }, 3500);
+      }
+    };
+
+  </script>
+
+</html>
