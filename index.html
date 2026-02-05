@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <title>Riipus</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Riipus Home Page">
+    <meta name="author" content="Niko Hakala">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Riipus, Riipus Interactive, Paranoia, Paranoia Game">
+
+    <link rel="stylesheet" href="CSS/styles.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="img/ico/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/ico/favicon-16x16.png">
+    <link rel="manifest" href="img/ico/site.webmanifest">
+
+  </head>
+
+  <body>
+
+    <div class="main">
+
+      <!-- Intro Section -->
+      <div class="container1">
+        <div class="logo-group">
+          <img class="logo" id="norightclick1" src="img/logo_white_transparent.png" alt="Riipus Logo">
+          <div class="text-wrapper">
+            <h1><span class="logo-text">Riipus Interactive</span></h1>
+          </div>
+        </div>
+
+
+        <div class="down-wrapper">
+          <span class="down-arrow">
+            <span class="v1">▼</span><br>
+          </span>
+        </div>
+
+      </div>
+
+      <!-- Games Section -->
+      <div class="container2">
+        <div class="games-wrapper">
+          <span class="title-text">Games</span>
+
+          <div class="game-cover-wrapper">
+            <img class="gamecover" id="norightclick2" src="img/games/paranoia_cover_v1.png" alt="paranoia cover image"></img>
+          </div>
+
+          <div class="title">
+            <h3><span class="game-name">PARANOIA</span></h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="down-wrapper">
+        <span class="down-arrow">
+          <span class="v1">▼</span><br>
+        </span>
+      </div>
+
+      <!-- Team Section -->
+      <div class="container3">
+        <div class="team-wrapper">
+          <span class="title-text">Team</span>
+
+          <div class="image">
+            <img class="profilepic" id="norightclick3" src="img/xmprfl.jpg" alt="Developer Image"></img>
+          </div>
+
+          <h2>Niko Hakala</h2>
+          <span class="role">DEVELOPER</span>
+        </div>
+      </div>
+
+      <div class="down-wrapper">
+        <span class="down-arrow">
+          <span class="v1">▼</span><br>
+        </span>
+      </div>
+
+      <!-- Social Section -->
+      <div class="container4">
+        <span class="title-text">Social</span>
+
+        <div class="contact-info">
+          <a href="https://www.instagram.com/riipusgames/" aria-label="Instagram">
+            <img class="lilogo" src="img/icons8-instagram.png" alt="Instagram icon">
+          </a>
+
+          <a href="https://www.linkedin.com/company/riipus/" aria-label="LinkedIn">
+            <img class="lilogo" src="img/icons8-linkedin-logo.png" alt="LinkedIn icon">
+          </a>
+
+          <a href="mailto:riipusgames@gmail.com" aria-label="Email">
+            <img class="lilogo" src="img/icons8-email.png" alt="Email icon">
+          </a>
+
+          <a href="https://www.youtube.com/@riipus" aria-label="YouTube">
+            <img class="lilogo" src="img/icons8-youtube.png" alt="YouTube icon">
+          </a>
+
+          <a href="https://x.com/riipusgames" aria-label="X (Twitter)">
+            <img class="lilogo" src="img/icons8-xlogo.png" alt="X icon">
+          </a>
+
+          <a href="https://discord.gg/sCnHbkwqfF" aria-label="Discord">
+            <img class="lilogo" src="img/icons8-discord-logo.png" alt="Discord icon">
+          </a>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <p>/ 2026 / Riipus Interactive /</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+
+      if (location.pathname.endsWith('index.html')) {
+        const newPath = location.pathname.replace('index.html', '');
+        window.history.replaceState({}, document.title, newPath);
+      }
+
+      ['norightclick1', 'norightclick2'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.oncontextmenu = e => e.preventDefault();
+        }
+      });
+
+    </script>
+
+  </body>
+
+</html>
