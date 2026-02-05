@@ -61,7 +61,7 @@ body {
 }
 
 .v1 {
-  animation-delay: 3s;
+  animation-delay: 0s;
 }
 
 .down-wrapper {
@@ -480,3 +480,4 @@ h3 {
     font-size: clamp(18px, 5vw, 32px);
   }
 }
+
