@@ -1,0 +1,780 @@
+@font-face {
+  font-family: 'poppins';
+  src: url('../fonts/Poppins-Regular.ttf') format('truetype');
+  font-weight: 500;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: poppins, sans-serif;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+  background: #1b1b1b;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background: #1b1b1b;
+  background-size: 100%;
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  animation: fadeIn 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.main {
+  width: 100%;
+  position: relative;
+  padding: 0 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.down-arrow {
+  font-family: poppins, sans-serif;
+  font-weight: 600;
+  font-size: clamp(24px, 6vw, 75px);
+  line-height: 1.4;
+  color: floralwhite;
+  text-align: center;
+  display: block;
+}
+
+.down-arrow span {
+  opacity: 0;
+  display: inline-block;
+  animation-name: fade-in;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+}
+
+.v1 {
+  animation-delay: 2s;
+}
+
+.down-wrapper {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.down-wrapper-top {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+.container1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 0 20px;
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+.container1 .down-wrapper-top {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0 0 20px;
+}
+
+.container2 {
+  text-align: center;
+}
+
+.container3 {
+  text-align: center;
+}
+
+.container4 {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.contact-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  gap: 15px;
+  background-color: floralwhite;
+  border-image-slice: 1;
+  padding: 10px 5px 2px;
+  border-radius: 3px;
+}
+
+.lilogo {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  border-image-slice: 1;
+}
+
+.text-wrapper {
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-text {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 1.1s steps(30, end) forwards;
+  background: floralwhite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.title-text {
+  font-size: clamp(24px, 5vw, 65px);
+  font-weight: 600;
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 1.1s steps(30, end) forwards;
+  background: floralwhite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin: 0px 0px 20px;
+}
+
+h1 {
+  font-family: poppins, sans-serif;
+  font-size: 65px;
+}
+
+h2 {
+  color: floralwhite;
+  font-family: poppins, sans-serif;
+  font-size: 36px;
+  background-color: rgba(0, 0, 0, 0.185);
+  border-image-slice: 1;
+  border-radius: 3px;
+}
+
+h3 {
+  font-family: poppins, sans-serif;
+  font-size: 36px;
+}
+
+.role {
+  color: #1b1b1b;
+  font-family: poppins, sans-serif;
+  font-size: 16px;
+  background-color:floralwhite;
+  border-image-slice: 1;
+  border-radius: 3px;
+  padding: 2px 5px 2px;
+}
+
+.logo-text::after {
+  content: '';
+  display: block;
+  width: 0%;
+  height: 5px;
+  background: floralwhite;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  animation: fade-in 1s ease-in forwards, stretch-underline 2s ease-out forwards;
+  animation-delay: 0s, 1s;
+}
+
+.title-text::after {
+  content: '';
+  display: block;
+  width: 0%;
+  height: 5px;
+  background: floralwhite;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  animation: fade-in 1s ease-in forwards, stretch-underline 2s ease-out forwards;
+  animation-delay: 0s, 1s;
+}
+
+.logo {
+  max-width: 400px;
+  max-height: 400px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  position: relative;
+  animation: fadeIn 2s;
+  margin-bottom: -70px;
+}
+
+.profilepic {
+  margin-bottom: 5px;
+  width: 300px;
+  box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.1);
+  border-image-slice: 1;
+  border-radius: 3px;
+}
+
+.gamecover {
+  margin-bottom: 5px;
+  position: relative;
+  border: 2px solid floralwhite;
+  border-image-slice: 1;
+  width: 800px;
+  height: 450px;
+  border-image-slice: 1;
+  border-radius: 3px;
+}
+
+.title {
+  background-color: rgba(0, 0, 0, 0.185);
+  border-image-slice: 1;
+  border-radius: 3px;
+  margin: auto;
+  position: relative;
+  width: 65%;
+}
+
+.game-name {
+  font-family: poppins, sans-serif;
+  text-transform: uppercase;
+  color: floralwhite;
+}
+
+.site-footer {
+  width: 100%;
+  padding: 30px 0;
+  text-align: center;
+  font-family: poppins, sans-serif;
+  font-size: 16px;
+  color: floralwhite;
+  background-color: #1b1b1b;
+  position: relative;
+  animation: fade-in 1s ease-in forwards;
+  border-top: none;
+}
+
+.site-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: floralwhite;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+/* =========================================================
+   Phase 1 – motion (driven by js/main.js)
+   The "js" class is added in <head>; without it the site
+   shows everything normally.
+   ========================================================= */
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: floralwhite;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.down-arrow {
+  cursor: pointer;
+  animation: bob 2.4s ease-in-out infinite;
+  user-select: none;
+}
+
+.down-arrow:focus-visible {
+  outline: 1px solid floralwhite;
+  outline-offset: 6px;
+}
+
+.role {
+  display: inline-block;
+}
+
+/* Hidden until GSAP reveals them */
+.js [data-reveal] {
+  opacity: 0;
+}
+
+/* Hero title: letters animated by JS instead of the CSS typing effect */
+.js .logo,
+.js .logo-text {
+  animation: none;
+}
+
+.js .logo-text {
+  background: none;
+  color: floralwhite;
+}
+
+.logo-text .char {
+  display: inline-block;
+  will-change: transform;
+}
+
+.js .logo-text::after {
+  animation-delay: 0s, 0.2s;
+}
+
+/* Typing + underline wait until the element scrolls into view */
+.js .title-text,
+.js .title-text::after,
+.js .logo-text::after {
+  animation-play-state: paused;
+}
+
+.js .title-text.is-in,
+.js .title-text.is-in::after,
+.js .logo-text.is-in::after {
+  animation-play-state: running;
+}
+
+/* =========================================================
+   Phase 2 – hero background canvas (driven by js/hero.js)
+   ========================================================= */
+
+.hero-canvas {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.js .hero-canvas {
+  display: block;
+}
+
+.main,
+.site-footer {
+  z-index: 1;
+}
+
+/* =========================================================
+   Phase 3 – sticky nav, cover tilt, social hover
+   ========================================================= */
+
+/* ---------- Sticky nav ---------- */
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 5%;
+  transition: padding 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* The bar itself: invisible over the hero, fades in once you scroll past it */
+.site-nav::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(27, 27, 27, 0.72);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 250, 240, 0.12);
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.site-nav.is-scrolled {
+  padding: 14px 5%;
+}
+
+.site-nav.is-scrolled::before {
+  opacity: 1;
+}
+
+/* Without JS the bar is always shown so links stay readable */
+html:not(.js) .site-nav::before {
+  opacity: 1;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: floralwhite;
+  text-decoration: none;
+  font-size: 15px;
+  letter-spacing: 0.25em;
+}
+
+.nav-brand img {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.nav-brand:hover img {
+  transform: rotate(60deg);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+}
+
+.nav-links a {
+  position: relative;
+  padding: 4px 0;
+  color: floralwhite;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background: floralwhite;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.nav-links a:hover,
+.nav-links a.is-active {
+  opacity: 1;
+}
+
+.nav-links a:hover::after,
+.nav-links a.is-active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* ---------- Game cover tilt ---------- */
+.game-cover-wrapper {
+  perspective: 1000px;
+}
+
+.tilt {
+  position: relative;
+  display: inline-block;
+  line-height: 0;
+  margin-bottom: 5px;
+  border-radius: 3px;
+  will-change: transform;
+}
+
+.tilt .gamecover {
+  display: block;
+  margin-bottom: 0;
+}
+
+/* ---------- Team picture: keeps the zoom inside the frame ---------- */
+.container3 .image {
+  display: block;
+  width: fit-content;
+  margin: 0 auto 5px;
+  overflow: hidden;
+  line-height: 0;
+  border-radius: 3px;
+}
+
+.container3 .profilepic {
+  display: block;
+  margin-bottom: 0;
+}
+
+/* ---------- Social icons ---------- */
+.contact-info a {
+  display: inline-flex;
+}
+
+.lilogo {
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.35s, filter 0.35s;
+}
+
+.contact-info:hover .lilogo {
+  opacity: 0.4;
+}
+
+.contact-info a:hover .lilogo,
+.contact-info a:focus-visible .lilogo {
+  opacity: 1;
+  transform: translateY(-5px) scale(1.15);
+  filter: drop-shadow(0 6px 5px rgba(27, 27, 27, 0.35));
+}
+
+@media (max-width: 480px) {
+  .nav-brand span {
+    display: none;
+  }
+
+  .nav-links {
+    gap: 18px;
+  }
+
+  .nav-links a {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+  }
+}
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .down-arrow {
+    animation: none;
+  }
+}
+
+@keyframes typing {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes stretch-underline {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+@keyframes popEffect {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 1150px) {
+  .logo-text {
+    font-size: 45px;
+    margin-top: 15px;
+  }
+
+  .logo {
+    width: 300px;
+  }
+
+  .title-text {
+    font-size: 48px;
+  }
+
+  .gamecover {
+    width: 700px;
+    height: 393px;
+  }
+
+  .profilepic {
+    width: 240px;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  h3 {
+    font-size: 28px;
+  }
+
+  .lilogo {
+    width: 36px;
+    height: 36px;
+  }
+
+  .site-footer p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .gamecover {
+    width: 450px;
+    height: 250px;
+  }
+
+  .profilepic {
+    width: 180px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 22px;
+  }
+
+  .role {
+    font-size: 13px;
+  }
+
+  .lilogo {
+    width: 30px;
+    height: 30px;
+  }
+
+  .site-footer p {
+    font-size: 12px;
+  }
+
+  .game-cover-wrapper {
+    max-width: 560px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-text {
+    font-size: 32px;
+    margin-top: 30px;
+  }
+
+  .logo{
+    width: 200px;
+  }
+
+  .title-text {
+    font-size: 28px;
+  }
+
+  .gamecover {
+    width: 305px;
+    height: 171px;
+  }
+
+  .profilepic {
+    width: 150px;
+  }
+
+  h2, h3 {
+    font-size: 20px;
+  }
+
+  .role {
+    font-size: 12px;
+  }
+
+  .lilogo {
+    width: 26px;
+    height: 26px;
+  }
+
+  .site-footer p {
+    font-size: 11px;
+  }
+
+  .game-cover-wrapper {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 340px) {
+  .logo-text,
+  .title-text {
+    font-size: 22px;
+  }
+
+  .logo-text{
+    margin-top: 40px;
+  }
+
+  .logo{
+    width: 150px;
+  }
+
+  .gamecover {
+    width: 260px;
+    height: 145px;
+  }
+
+  .profilepic {
+    width: 120px;
+  }
+
+  .lilogo {
+    width: 22px;
+    height: 22px;
+  }
+
+  .site-footer p {
+    font-size: 10px;
+  }
+}
+
+@media (max-height: 425px) and (orientation: landscape) {
+  .container1 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .logo {
+    max-height: 150px;
+    margin-bottom: -56px;
+  }
+
+  .logo-text {
+    font-size: clamp(18px, 5vw, 32px);
+  }
+}
