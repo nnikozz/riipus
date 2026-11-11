@@ -2,17 +2,17 @@
 <html lang="en">
   <head>
 
-    <title>Riipus</title>
+    <title>Riipus Interactive</title>
     <meta charset="utf-8">
-    <meta name="description" content="Riipus Home Page">
+    <meta name="description" content="Games, Apps, Software.">
     <meta name="author" content="Niko Hakala">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="Riipus, Riipus Interactive, Paranoia, Paranoia Game">
+    <meta name="keywords" content="Riipus, Riipus Interactive, Paranoia, Paranoia Game, Xelerate, Xelerate Game">
 
     <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.13/dist/lenis.css">
     <link rel="stylesheet" href="CSS/styles.css">
 
-    <!-- Hides elements that will animate in; falls back to showing everything if scripts fail to load -->
+    <!-- JS check -->
     <script>
       document.documentElement.classList.add('js');
       setTimeout(function () {
@@ -30,9 +30,8 @@
   <body>
 
     <div class="scroll-progress" aria-hidden="true"></div>
-    <canvas class="hero-canvas" aria-hidden="true"></canvas>
 
-    <!-- Sticky nav: slides in after the hero -->
+    <!-- Nav -->
     <nav class="site-nav" aria-label="Main">
       <a class="nav-brand" href="#top" aria-label="Back to top">
         <img class="norightclick" src="img/logo_white_transparent.png" alt="">
@@ -45,10 +44,12 @@
       </ul>
     </nav>
 
-    <div class="main">
+    <!-- Main -->
+    <div class="hero" id="top">
+      <div class="container1 hero-stage">
+        <canvas class="hero-canvas" aria-hidden="true"></canvas>
 
-      <!-- Intro Section -->
-      <div class="container1" id="top">
+        <!-- Intro Section -->
         <div class="logo-group">
           <img class="logo norightclick" src="img/logo_white_transparent.png" alt="Riipus Logo">
           <div class="text-wrapper">
@@ -56,121 +57,139 @@
           </div>
         </div>
 
-
         <div class="down-wrapper-top">
           <span class="down-arrow">
             <span class="v1">▼</span>
           </span>
         </div>
 
-      </div>
-
-      <!-- Games Section -->
-      <div class="container2" id="games" data-section="games">
-        <div class="games-wrapper">
-          <span class="title-text">Games</span>
-
-          <div class="game-cover-wrapper" data-reveal="scale">
-            <img class="gamecover norightclick" src="img/games/coming_soon.png" alt="paranoia cover image"></img>
+        <!-- Games Section -->
+        <section class="scene scene-title" id="games">
+          <div class="scene-inner">
+            <span class="title-text">Games</span>
           </div>
+        </section>
 
-          <div class="title" data-reveal>
-            <h3><span class="game-name">XELERATE</span></h3>
+        <section class="scene scene-game container2">
+          <div class="scene-inner games-wrapper">
+            <div class="game-cover-wrapper">
+              <img class="gamecover norightclick" src="img/games/coming_soon.png" alt="Xelerate cover image">
+            </div>
+            <div class="title">
+              <h3><span class="game-name">XELERATE</span></h3>
+            </div>
           </div>
+        </section>
+
+        <!-- Arrow -->
+        <div class="down-wrapper down-wrapper-mid" aria-hidden="true">
+          <span class="down-arrow">
+            <span class="v1">▼</span>
+          </span>
         </div>
-      </div>
 
-      <div class="down-wrapper" data-reveal>
-        <span class="down-arrow">
-          <span class="v1">▼</span>
-        </span>
-      </div>
-
-      <div class="container2" data-section="games">
-        <div class="games-wrapper">
-
-          <div class="game-cover-wrapper" data-reveal="scale">
-            <img class="gamecover norightclick" src="img/games/paranoia_cover_v1.png" alt="paranoia cover image"></img>
+        <section class="scene scene-game container2">
+          <div class="scene-inner games-wrapper">
+            <div class="game-cover-wrapper">
+              <img class="gamecover norightclick" src="img/games/paranoia_cover_v1.png" alt="Paranoia cover image">
+            </div>
+            <div class="title">
+              <h3><span class="game-name">PARANOIA</span></h3>
+            </div>
           </div>
+        </section>
 
-          <div class="title" data-reveal>
-            <h3><span class="game-name">PARANOIA</span></h3>
+        <!-- Arrow -->
+        <div class="down-wrapper down-wrapper-mid" aria-hidden="true">
+          <span class="down-arrow">
+            <span class="v1">▼</span>
+          </span>
+        </div>
+
+        <!-- Team Section -->
+        <section class="scene scene-title" id="team">
+          <div class="scene-inner">
+            <span class="title-text">Team</span>
           </div>
-        </div>
-      </div>
+        </section>
 
-      <div class="down-wrapper" data-reveal>
-        <span class="down-arrow">
-          <span class="v1">▼</span>
-        </span>
-      </div>
-
-      <!-- Team Section -->
-      <div class="container3" id="team" data-section="team">
-        <div class="team-wrapper">
-          <span class="title-text">Team</span>
-
-          <div class="image" data-reveal="clip">
-            <img class="profilepic norightclick" src="img/xmprfl.jpg" alt="Developer Image"></img>
+        <section class="scene scene-team container3">
+          <div class="scene-inner team-wrapper">
+            <div class="image">
+              <img class="profilepic norightclick" src="img/xmprfl.jpg" alt="Developer Image">
+            </div>
+            <h2>Niko Hakala</h2>
+            <span class="role">DEVELOPER</span>
           </div>
+        </section>
 
-          <h2 data-reveal="left">Niko Hakala</h2>
-          <span class="role" data-reveal="right">DEVELOPER</span>
+        <!-- Arrow -->
+        <div class="down-wrapper down-wrapper-mid" aria-hidden="true">
+          <span class="down-arrow">
+            <span class="v1">▼</span>
+          </span>
         </div>
-      </div>
 
-      <div class="down-wrapper" data-reveal>
-        <span class="down-arrow">
-          <span class="v1">▼</span>
-        </span>
-      </div>
+        <!-- Social Section -->
+        <section class="scene scene-title" id="social">
+          <div class="scene-inner">
+            <span class="title-text">Social</span>
+          </div>
+        </section>
 
-      <!-- Social Section -->
-      <div class="container4" id="social" data-section="social">
-        <span class="title-text">Social</span>
+        <section class="scene scene-social container4">
+          <div class="scene-inner">
+            <div class="contact-info">
 
-        <div class="contact-info" data-reveal="stagger">
+              <a href="https://www.linkedin.com/company/riipus/" aria-label="LinkedIn">
+                <img class="lilogo" src="img/icons8-linkedin-logo.png" alt="LinkedIn icon">
+              </a>
 
-          <a href="https://www.linkedin.com/company/riipus/" aria-label="LinkedIn">
-            <img class="lilogo" src="img/icons8-linkedin-logo.png" alt="LinkedIn icon">
-          </a>
+              <a href="mailto:riipus@protonmail.com" aria-label="Email">
+                <img class="lilogo" src="img/icons8-email.png" alt="Email icon">
+              </a>
 
-          <a href="mailto:riipus@protonmail.com" aria-label="Email">
-            <img class="lilogo" src="img/icons8-email.png" alt="Email icon">
-          </a>
+              <a href="https://github.com/bidmaxxing" aria-label="GitHub">
+                <img class="lilogo" src="img/icons8-github-50.png" alt="GitHub icon">
+              </a>
 
-          <a href="https://bsky.app/profile/riipus.com" aria-label="Bluesky">
-            <img class="lilogo" src="img/icons8-bluesky-50.png" alt="Bsky icon">
-          </a>
+              <a href="https://bsky.app/profile/riipus.com" aria-label="Bluesky">
+                <img class="lilogo" src="img/icons8-bluesky-50.png" alt="Bsky icon">
+              </a>
 
-          <a href="https://www.tiktok.com/@riipusgames" aria-label="Tiktok">
-            <img class="lilogo" src="img/icons8-tiktok-50.png" alt="Tiktok icon">
-          </a>
+              <a href="https://www.tiktok.com/@riipusgames" aria-label="Tiktok">
+                <img class="lilogo" src="img/icons8-tiktok-50.png" alt="Tiktok icon">
+              </a>
 
-          <a href="https://www.instagram.com/riipusgames/" aria-label="Instagram">
-            <img class="lilogo" src="img/icons8-instagram.png" alt="Instagram icon">
-          </a>
+              <a href="https://www.instagram.com/riipusgames/" aria-label="Instagram">
+                <img class="lilogo" src="img/icons8-instagram.png" alt="Instagram icon">
+              </a>
 
-          <a href="https://x.com/riipusdev" aria-label="X (Twitter)">
-            <img class="lilogo" src="img/icons8-xlogo.png" alt="X icon">
-          </a>
+              <a href="https://x.com/riipusdev" aria-label="X (Twitter)">
+                <img class="lilogo" src="img/icons8-xlogo.png" alt="X icon">
+              </a>
 
-          <a href="https://www.youtube.com/@riipus" aria-label="YouTube">
-            <img class="lilogo" src="img/icons8-youtube.png" alt="YouTube icon">
-          </a>
+              <a href="https://www.youtube.com/@riipus" aria-label="YouTube">
+                <img class="lilogo" src="img/icons8-youtube-50.png" alt="YouTube icon">
+              </a>
 
-          <a href="https://discord.gg/sCnHbkwqfF" aria-label="Discord">
-            <img class="lilogo" src="img/icons8-discord-logo.png" alt="Discord icon">
-          </a>
+              <a href="https://discord.gg/sCnHbkwqfF" aria-label="Discord">
+                <img class="lilogo" src="img/icons8-discord-new-50.png" alt="Discord icon">
+              </a>
 
-        </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="scene scene-footer site-footer">
+          <div class="scene-inner">
+            <p>/ 2026 / Riipus Interactive /</p>
+          </div>
+        </footer>
+
       </div>
     </div>
-
-    <!-- Footer -->
-    <footer class="site-footer" data-reveal>
-      <p>/ 2026 / Riipus Interactive /</p>
-    </footer>
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>

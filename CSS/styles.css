@@ -94,7 +94,7 @@ body {
   min-height: 100svh;
 }
 
-.container1 .down-wrapper-top {
+.js .container1 .down-wrapper-top {
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -124,7 +124,7 @@ body {
   gap: 15px;
   background-color: floralwhite;
   border-image-slice: 1;
-  padding: 10px 5px 2px;
+  padding: 6px 6px;
   border-radius: 3px;
 }
 
@@ -298,11 +298,15 @@ h3 {
   margin: 0;
 }
 
-/* =========================================================
-   Phase 1 – motion (driven by js/main.js)
-   The "js" class is added in <head>; without it the site
-   shows everything normally.
-   ========================================================= */
+/* Motion */
+
+html.js {
+  scrollbar-width: none;
+}
+
+html.js::-webkit-scrollbar {
+  display: none;
+}
 
 .scroll-progress {
   position: fixed;
@@ -317,7 +321,7 @@ h3 {
   pointer-events: none;
 }
 
-.down-arrow {
+.js .down-arrow {
   cursor: pointer;
   animation: bob 2.4s ease-in-out infinite;
   user-select: none;
@@ -332,12 +336,10 @@ h3 {
   display: inline-block;
 }
 
-/* Hidden until GSAP reveals them */
 .js [data-reveal] {
   opacity: 0;
 }
 
-/* Hero title: letters animated by JS instead of the CSS typing effect */
 .js .logo,
 .js .logo-text {
   animation: none;
@@ -346,38 +348,164 @@ h3 {
 .js .logo-text {
   background: none;
   color: floralwhite;
+  vertical-align: top;
 }
 
 .logo-text .char {
   display: inline-block;
-  will-change: transform;
+  position: relative;
+}
+
+.char-sizer {
+  visibility: hidden;
+}
+
+.char-shard {
+  position: absolute;
+  inset: 0;
+}
+
+.js .logo-text::after {
+  display: none;
+}
+
+.logo-uline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 5px;
+  display: flex;
+}
+
+.logo-uline span {
+  flex: 1;
+  background: floralwhite;
 }
 
 .js .logo-text::after {
   animation-delay: 0s, 0.2s;
 }
 
-/* Typing + underline wait until the element scrolls into view */
-.js .title-text,
-.js .title-text::after,
 .js .logo-text::after {
   animation-play-state: paused;
 }
 
-.js .title-text.is-in,
-.js .title-text.is-in::after,
 .js .logo-text.is-in::after {
   animation-play-state: running;
 }
 
-/* =========================================================
-   Phase 2 – hero background canvas (driven by js/hero.js)
-   ========================================================= */
+.js .title-text:not(.is-in) {
+  animation: none;
+  clip-path: inset(0 100% 0 0);
+}
+
+.js .title-text:not(.is-in)::after {
+  animation: none;
+  opacity: 0;
+  width: 0;
+}
+
+/* Hero background */
+
+.hero {
+  position: relative;
+}
+
+.js .hero {
+  height: 960vh;
+}
+
+.js .hero-stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100svh;
+  min-height: 0;
+  overflow: hidden;
+}
+
+@supports (overflow: clip) {
+  .js .hero-stage {
+    overflow-x: clip;
+    overflow-y: visible;
+  }
+}
+
+/* Scenes */
+.scene {
+  max-width: 100%;
+  padding: 0 5%;
+  text-align: center;
+}
+
+.js .scene {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 5% 30px;
+  margin: 0;
+  transform-origin: 50% calc(50% + 25px);
+  visibility: hidden;
+  opacity: 0;
+}
+
+.scene-inner {
+  scale: var(--fit, 1);
+}
+
+.scene .contact-info {
+  margin: 0;
+}
+
+.js .scene-title .title-text {
+  font-size: clamp(48px, 11vw, 130px);
+  margin: 0;
+}
+
+.js .hero .scene-title .title-text {
+  animation: none;
+  clip-path: none;
+  background: none;
+  color: floralwhite;
+  overflow: visible;
+}
+
+.js .scene-title .title-text::after {
+  display: none;
+}
+
+.scene-title .char {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+}
+
+.js .scene-footer {
+  background: none;
+  animation: none;
+}
+
+.js .scene-footer::before {
+  display: none;
+}
+
+.js .site-footer.scene-footer p {
+  font-size: clamp(16px, 2.4vw, 26px);
+  letter-spacing: 0.08em;
+}
 
 .hero-canvas {
   display: none;
-  position: fixed;
-  inset: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100lvh;
   z-index: 0;
   pointer-events: none;
 }
@@ -386,16 +514,18 @@ h3 {
   display: block;
 }
 
+.logo-group,
+.down-wrapper-top {
+  position: relative;
+  z-index: 1;
+}
+
 .main,
 .site-footer {
   z-index: 1;
 }
 
-/* =========================================================
-   Phase 3 – sticky nav, cover tilt, social hover
-   ========================================================= */
-
-/* ---------- Sticky nav ---------- */
+/* Nav */
 .site-nav {
   position: fixed;
   top: 0;
@@ -409,7 +539,6 @@ h3 {
   transition: padding 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-/* The bar itself: invisible over the hero, fades in once you scroll past it */
 .site-nav::before {
   content: '';
   position: absolute;
@@ -423,6 +552,15 @@ h3 {
   transition: opacity 0.6s ease;
 }
 
+/* Touch screens */
+@media (pointer: coarse) {
+  .site-nav::before {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background: rgba(27, 27, 27, 0.92);
+  }
+}
+
 .site-nav.is-scrolled {
   padding: 14px 5%;
 }
@@ -431,7 +569,6 @@ h3 {
   opacity: 1;
 }
 
-/* Without JS the bar is always shown so links stay readable */
 html:not(.js) .site-nav::before {
   opacity: 1;
 }
@@ -498,7 +635,7 @@ html:not(.js) .site-nav::before {
   transform-origin: left;
 }
 
-/* ---------- Game cover tilt ---------- */
+/* Game cover tilt */
 .game-cover-wrapper {
   perspective: 1000px;
 }
@@ -517,7 +654,7 @@ html:not(.js) .site-nav::before {
   margin-bottom: 0;
 }
 
-/* ---------- Team picture: keeps the zoom inside the frame ---------- */
+/* Team picture */
 .container3 .image {
   display: block;
   width: fit-content;
@@ -532,7 +669,7 @@ html:not(.js) .site-nav::before {
   margin-bottom: 0;
 }
 
-/* ---------- Social icons ---------- */
+/* Social icons */
 .contact-info a {
   display: inline-flex;
 }
@@ -565,6 +702,40 @@ html:not(.js) .site-nav::before {
     font-size: 11px;
     letter-spacing: 0.15em;
   }
+}
+
+/* No JS */
+
+.js .down-wrapper-mid {
+  display: none;
+}
+
+html:not(.js) .hero-stage {
+  padding-top: 110px;
+}
+
+html:not(.js) .scene {
+  scroll-margin-top: 90px;
+}
+
+html:not(.js) .scene-footer {
+  align-self: stretch;
+  width: 100%;
+  padding: 30px 0;
+  margin-top: 0;
+}
+
+@supports (animation-timeline: scroll()) {
+  html:not(.js) .site-nav {
+    animation: nav-fade-out linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0 180px;
+  }
+}
+
+@keyframes nav-fade-out {
+  from { opacity: 1; visibility: visible; }
+  to { opacity: 0; visibility: hidden; }
 }
 
 @keyframes bob {
@@ -686,6 +857,11 @@ html:not(.js) .site-nav::before {
 }
 
 @media (max-width: 480px) {
+  .contact-info {
+    gap: 10px;
+    padding: 6px 6px;
+  }
+
   .logo-text {
     font-size: 32px;
     margin-top: 30px;
@@ -734,6 +910,11 @@ html:not(.js) .site-nav::before {
   .logo-text,
   .title-text {
     font-size: 22px;
+  }
+
+  .contact-info {
+    gap: 9px;
+    padding: 6px 6px;
   }
 
   .logo-text{
